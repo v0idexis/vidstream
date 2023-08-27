@@ -25,7 +25,9 @@ router.get('/:query', async (req, res) => {
             id: item.id
         });
     });
-    res.send(resultsArr);
+    res.send({
+        body: resultsArr
+    });
 })
 
 module.exports = router

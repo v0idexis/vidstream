@@ -1,6 +1,7 @@
 require("dotenv").config();
 const express = require('express');
 const app = express();
+const cors = require('cors')
 // app.use(express.json());
 const PORT = process.env.PORT || 5000;
 const vidAPI = process.env.VIDAPI;
@@ -8,6 +9,7 @@ const vidAPI = process.env.VIDAPI;
 // importing search
 const search = require("./features/search");
 
+app.use(cors());
 app.use('/search', search);
 
 
